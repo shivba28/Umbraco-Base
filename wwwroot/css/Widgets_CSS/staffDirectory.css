@@ -217,7 +217,7 @@
        past the paper edge and garbles every printed page. Override it. */
     @page{
         size: letter portrait;
-        margin: 1.27cm;
+        margin: 0.508cm;
     }
     @page :first{
         margin-top: 0cm;
@@ -231,8 +231,8 @@
        print; drop both and lay the list out as two paper columns. */
     .staff-directory__grid.row{
         display: block !important;
-        column-count: 1;
-        column-gap: 32px;
+        column-count: 3;
+        column-gap: 24px;
     }
     .staff-directory__item{
         display: block !important;
@@ -241,6 +241,11 @@
         max-width: 100% !important;
         break-inside: avoid;
         page-break-inside: avoid;
+        border-bottom: 1px solid #ccc;
+        padding: 8px 0;
+    }
+    .staff-directory__item:last-child{
+        border-bottom: 0;
     }
     .staff-directory__letterhead{
         border-bottom: 2px solid #000;
@@ -266,8 +271,8 @@
     /* Circles (border-radius + overflow:hidden) can rasterise as corrupted
        blocks in Chromium's print pipeline; print a plain square instead. */
     .staff-directory__photo{
-        width: 50px;
-        height: 50px;
+        width: 85px;
+        height: 85px;
         aspect-ratio: unset;
         border-radius: 0;
         border: 1px solid #999;
@@ -275,26 +280,28 @@
         margin: 0 !important;
     }
     .staff-directory__initial{
-        font-size: 1.2rem;
+        font-size: 1.9rem;
     }
     .staff-directory__name{
-        font-size: 0.75rem;
+        font-size: 0.9rem;
     }
     .staff-directory__title{
-        font-size: 0.675rem;
+        font-size: 0.78rem;
     }
     .staff-directory__dept{
-        font-size: 0.5625rem;
+        font-size: 0.66rem;
     }
     .staff-directory__contact{
-        font-size: 0.6375rem;
+        font-size: 0.72rem;
+        word-break: break-word;
     }
     .staff-directory__card{
         display: flex;
+        flex-direction: column;
         align-items: center;
-        gap: 10px;
-        text-align: left !important;
-        padding: 2px 0;
+        gap: 6px;
+        text-align: center !important;
+        padding: 0;
     }
     .staff-directory__contact a{
         color: #000;

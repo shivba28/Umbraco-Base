@@ -68,10 +68,11 @@
     static string[] DeptList(string? raw) =>
         (raw ?? "").Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
 
-    // distinct departments, in first-seen order
+    // distinct departments, sorted alphabetically ("All" stays first, it is hardcoded)
     var departments = staff
         .SelectMany(s => DeptList(s.Content.Value<string>("department")))
         .Distinct(StringComparer.OrdinalIgnoreCase)
+        .OrderBy(d => d, StringComparer.OrdinalIgnoreCase)
         .ToList();
 }
 
