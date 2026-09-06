@@ -222,6 +222,19 @@
     @page :first{
         margin-top: 0cm;
     }
+    /* styles.css sets #wrapper min-height:100vh, which fills one whole sheet on
+       its own. Any trailing space below the list then spills to a blank page 2.
+       Drop the min-height and the trailing padding/margins. */
+    #wrapper{
+        min-height: 0 !important;
+    }
+    .block-staff-directory{
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    .staff-directory__grid.row{
+        margin-bottom: 0 !important;
+    }
     .staff-directory__controls,
     .staff-directory__biolink,
     .staff-directory__dialog{
@@ -243,6 +256,7 @@
         page-break-inside: avoid;
         border-bottom: 1px solid #ccc;
         padding: 8px 0;
+        margin-bottom: 0 !important;
     }
     .staff-directory__item:last-child{
         border-bottom: 0;
