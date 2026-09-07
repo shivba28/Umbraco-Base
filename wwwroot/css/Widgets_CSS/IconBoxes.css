@@ -549,3 +549,20 @@
   }
 
 }
+
+/* JROTC "Program outcomes" - a touch more compact than the default box */
+#jrotc-outcomes .icon-boxes {
+    padding: 1.15rem !important;
+}
+#jrotc-outcomes .icon-boxes .my-icon {
+    margin-bottom: 0.5rem !important;
+}
+#jrotc-outcomes .icon-boxes .my-icon i {
+    font-size: 2rem;
+}
+#jrotc-outcomes .icon-boxes h3 {
+    font-size: 1.05rem;
+}
+#jrotc-outcomes .icon-boxes .box-text {
+    font-size: 0.9rem;
+}
