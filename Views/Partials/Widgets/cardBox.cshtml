@@ -38,6 +38,9 @@
     var backgroundColorClass = string.IsNullOrWhiteSpace(bgColor) ? "bg-transparent" : "";
     var backgroundColorStyle = string.IsNullOrWhiteSpace(bgColor) ? "" : $"background-color:{bgColor};";
     var headerCenterTextClass = centerHeading ? "text-center" : "text-left";
+    var classNames = settings?.Value<IEnumerable<string>>("classnames")?.Where(s => !string.IsNullOrWhiteSpace(s)) is { } cn && cn.Any()
+        ? string.Join(" ", cn)
+        : string.Empty;
 
     var gutterSpacingClass = settings?.Value<string>("columnSpacing") is { Length: > 0 } cs ? cs : "gutters-md";
     var justifyContentClass = settings?.Value<string>("horizontalAlignment") switch
@@ -62,7 +65,7 @@
 
 @if (cards != null && cards.Any())
 {
-    <section class="section block-card-box @backgroundColorClass @verticalSpacingClass @topBorderClass" style="@backgroundColorStyle"
+    <section class="section block-card-box @backgroundColorClass @verticalSpacingClass @topBorderClass @classNames" style="@backgroundColorStyle"
     @if (!string.IsNullOrEmpty(anchorId))
     {
         <text>id="@anchorId"</text>

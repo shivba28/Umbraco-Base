@@ -575,14 +575,6 @@
     }
 }
 
-/* Library Media Center page - keep the section headings on the site text
-   font. Bare <h2>/<h3> otherwise pick up the Yeseva One display font from
-   base.css, which does not match the page title or the rest of the page. */
-.library-media h2,
-.library-media h3{
-    font-family: var(--font-nav-and-texts, "Nunito", sans-serif);
-}
-
 /* Opt-in: brand-purple backdrop for an embed (add "embed-purple" to the
    Custom Code block's Classnames). The calendar's own white area can't be
    recoloured (cross-origin iframe) - this frames it in SHS purple and makes

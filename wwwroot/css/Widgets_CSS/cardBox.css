@@ -72,3 +72,24 @@
         padding: 22px 20px;
     }
 }
+
+/* ==========================================================================
+   Library Media Center - two opt-in looks driven by the block Classnames field
+   ========================================================================== */
+
+/* "library-databases": research database cards keep a purple top rule */
+.block-card-box.library-databases .card-box__item{
+    border-top: 3px solid var(--shs-purple, #4a1f7a);
+}
+
+/* "library-info": Visit us panels sit flat on a pale ground, no hover lift */
+.block-card-box.library-info .card-box__item{
+    background: var(--shs-purple-pale, #f3edfa);
+    border-color: transparent;
+    box-shadow: none;
+}
+.block-card-box.library-info .card-box__item:hover{
+    transform: none;
+    box-shadow: none;
+    border-color: transparent;
+}
